@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha seu usuário — MonoCode</title>
+  <meta name="description" content="Escolha seu nome de usuário no MonoCode.">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-grid" style="max-width: 520px; grid-template-columns: 1fr;">
+      <main class="auth-card">
+        <div class="auth-header">
+          <a href="index.html" class="navbar-logo" style="justify-content: center; margin-bottom: 18px;">
+            <span class="logo-bracket">[</span>
+            <span class="logo-text">MonoCode</span>
+            <span class="logo-bracket">]</span>
+          </a>
+          <h1 class="auth-title">Escolha seu usuário</h1>
+          <p class="auth-subtitle">É assim que você vai aparecer na plataforma</p>
+        </div>
+
+        <div class="auth-error" id="onboarding-error" role="alert">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 3px;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 8v4"></path>
+            <path d="M12 16h.01"></path>
+          </svg>
+          <span id="onboarding-error-message">Erro</span>
+        </div>
+
+        <form id="onboarding-form" novalidate>
+          <div class="input-group">
+            <label class="input-label" for="username-input">Nome de usuário</label>
+            <input type="text" id="username-input" class="input-field" placeholder="ex: eduuhlann"
+                   autocomplete="username" spellcheck="false" maxlength="20" autofocus>
+            <p class="input-hint">3 a 20 caracteres — letras minúsculas, números, "_" e "."</p>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-full btn-lg" id="btn-continue">
+            Continuar
+          </button>
+          <a href="dashboard.html" class="btn btn-ghost w-full" id="btn-skip" style="margin-top: 10px;">
+            Decidir depois
+          </a>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <script type="module">
+    import { Auth } from '/js/auth.js';
+    import { Storage } from '/js/storage.js';
+
+    const form = document.getElementById('onboarding-form');
+    const input = document.getElementById('username-input');
+    const btn = document.getElementById('btn-continue');
+    const errorBox = document.getElementById('onboarding-error');
+    const errorMessage = document.getElementById('onboarding-error-message');
+
+    function showError(msg) {
+      errorMessage.textContent = msg;
+      errorBox.classList.add('is-visible');
+    }
+    function hideError() {
+      errorBox.classList.remove('is-visible');
+    }
+
+    // Sem sessão: volta pro login
+    const user = Storage.getUser();
+    if (!user) {
+      window.location.href = 'login.html';
+    } else if (user.username) {
+      // já tem username — não precisa disso
+      window.location.replace('dashboard.html');
+    }
+
+    input.addEventListener('input', () => {
+      input.value = input.value.toLowerCase().replace(/[^a-z0-9_.]/g, '');
+      hideError();
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hideError();
+      btn.disabled = true;
+      btn.textContent = 'Salvando...';
+
+      const result = await Auth.setUsername(input.value);
+      if (result.ok) {
+        window.location.href = 'dashboard.html';
+      } else {
+        showError(result.error);
+        btn.disabled = false;
+        btn.textContent = 'Continuar';
+      }
+    });
+  </script>
+</body>
+</html>

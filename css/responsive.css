@@ -1,0 +1,129 @@
+/**
+ * MonoCode — Responsive Adaptation Stylesheet
+ * Desktop, Notebook, Tablet & Mobile support
+ */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .continue-card {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-columns-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .exercise-workspace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .lesson-main-area {
+    padding: 32px 24px 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-links, .btn-search-trigger {
+    display: none;
+  }
+
+  .btn-mobile-toggle {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-nav-groups {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .levels-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-user-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .courses-filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .courses-search-box {
+    width: 100%;
+  }
+
+  .editor-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .editor-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+}

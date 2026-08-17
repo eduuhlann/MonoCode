@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — MonoCode</title>
+  <meta name="description" content="Acesse sua conta no MonoCode para continuar seus cursos e exercícios de programação.">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-grid">
+
+      <!-- Painel de marca (desktop) -->
+      <aside class="auth-brand">
+        <div class="auth-brand-top">
+          <a href="index.html" class="navbar-logo">
+            <span class="logo-bracket">[</span>
+            <span class="logo-text">MonoCode</span>
+            <span class="logo-bracket">]</span>
+          </a>
+        </div>
+
+        <div class="auth-brand-quote">
+          <p>Domine a arte de programar, uma linha de cada vez.</p>
+          <span>Cursos interativos, exercícios reais e um editor no navegador.</span>
+        </div>
+
+        <div class="auth-terminal" aria-hidden="true">
+          <div class="auth-terminal-bar"><span></span><span></span><span></span></div>
+          <div><span class="t-com">// sua jornada começa aqui</span></div>
+          <div><span class="t-key">const</span> <span class="t-fn">dev</span> = {</div>
+          <div>&nbsp;&nbsp;meta: <span class="t-str">"aprender todo dia"</span>,</div>
+          <div>&nbsp;&nbsp;streak: <span class="t-str">em andamento_</span></div>
+          <div>};</div>
+        </div>
+
+        <div class="auth-brand-stats">
+          <div class="auth-stat"><strong>12+</strong><span>Cursos</span></div>
+          <div class="auth-stat"><strong>240</strong><span>Exercícios</span></div>
+          <div class="auth-stat"><strong>100%</strong><span>Grátis</span></div>
+        </div>
+      </aside>
+
+      <!-- Card de autenticação -->
+      <main class="auth-card" id="auth-box">
+        <div class="auth-header">
+          <a href="index.html" class="navbar-logo" style="justify-content: center; margin-bottom: 18px;">
+            <span class="logo-bracket">[</span>
+            <span class="logo-text">MonoCode</span>
+            <span class="logo-bracket">]</span>
+          </a>
+          <h1 class="auth-title" id="auth-title">Acesse sua conta</h1>
+          <p class="auth-subtitle" id="auth-subtitle">Continue seu progresso de onde parou</p>
+        </div>
+
+        <div class="auth-error" id="auth-error" role="alert">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 3px;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 8v4"></path>
+            <path d="M12 16h.01"></path>
+          </svg>
+          <span id="auth-error-message">Erro</span>
+        </div>
+
+        <!-- Login social: Google + Discord (Supabase Auth) -->
+        <div class="auth-social">
+          <button type="button" class="btn-social" id="btn-google-login">
+            <span class="btn-social__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18">
+                <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92a8.78 8.78 0 0 0 2.68-6.62z"/>
+                <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.32A9 9 0 0 0 9 18z"/>
+                <path fill="#FBBC05" d="M3.97 10.72a5.4 5.4 0 0 1 0-3.44V4.96H.96a9 9 0 0 0 0 8.08l3.01-2.32z"/>
+                <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.46.9 11.42 0 9 0A9 9 0 0 0 .96 4.96l3.01 2.32C4.68 5.16 6.66 3.58 9 3.58z"/>
+              </svg>
+            </span>
+            <span class="btn-social__label">Continuar com o Google</span>
+          </button>
+
+          <button type="button" class="btn-social btn-social--discord" id="btn-discord-login">
+            <span class="btn-social__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#5865F2">
+                <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.128 12.3 12.3 0 0 1-1.873.891.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.029 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.029zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+            </span>
+            <span class="btn-social__label">Continuar com o Discord</span>
+          </button>
+        </div>
+
+        <p class="auth-terms">
+          Ao continuar, você concorda com os Termos de Uso e a Política de Privacidade do MonoCode.
+        </p>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+  <script type="module">
+    import { Auth } from '/js/auth.js';
+    import { UI } from '/js/ui.js';
+
+    const errorBox = document.getElementById('auth-error');
+    const errorMessage = document.getElementById('auth-error-message');
+    const googleBtn = document.getElementById('btn-google-login');
+    const discordBtn = document.getElementById('btn-discord-login');
+
+    function showError(message) {
+      errorMessage.textContent = message;
+      errorBox.classList.add('is-visible');
+    }
+
+    function bindProvider(btn, method, label) {
+      btn.addEventListener('click', async () => {
+        btn.disabled = true;
+        const original = btn.querySelector('.btn-social__label').textContent;
+        btn.querySelector('.btn-social__label').textContent = 'Conectando...';
+        try {
+          await method();
+        } catch (err) {
+          showError(err.message || 'Não foi possível iniciar o login. Tente novamente.');
+          btn.disabled = false;
+          btn.querySelector('.btn-social__label').textContent = original;
+        }
+      });
+    }
+
+    bindProvider(googleBtn, () => Auth.loginWithGoogle());
+    bindProvider(discordBtn, () => Auth.loginWithDiscord());
+
+    // =====================================================================
+    // Retorno do OAuth: o Supabase redireciona para cá com a sessão na URL.
+    // Detecta a sessão, cria o usuário local zerado e vai ao dashboard.
+    // =====================================================================
+    (async () => {
+      try {
+        const params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+        const isOAuthReturn = params.has('access_token') || window.location.search.includes('code=');
+
+        const user = await Auth.completeOAuthLogin();
+
+        if (user) {
+          if (isOAuthReturn) {
+            // limpa o hash da URL (#access_token=...)
+            window.history.replaceState({}, document.title, 'login.html');
+          }
+          UI.showToast(`Bem-vindo, ${(user.username || user.name).split(' ')[0]}!`, 'info');
+          setTimeout(() => {
+            // Primeiro login (sem username) -> onboarding para escolher o @
+            window.location.href = user.username ? 'dashboard.html' : 'onboarding.html';
+          }, 700);
+        } else if (isOAuthReturn) {
+          showError('Não foi possível concluir o login. Tente novamente.');
+        }
+      } catch (err) {
+        console.error('[login]', err);
+        showError(err.message || 'Falha ao processar o retorno de login.');
+      }
+    })();
+  </script>
+</body>
+</html>

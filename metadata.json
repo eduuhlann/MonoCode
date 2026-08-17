@@ -1,0 +1,6 @@
+{
+  "name": "MonoCode",
+  "description": "Plataforma completa para aprender programação do básico ao avançado com interface profissional 100% dark mode monocromática.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

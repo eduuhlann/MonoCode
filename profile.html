@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Aluno & Conquistas — MonoCode</title>
+  <meta name="description" content="Seu perfil de programador no MonoCode com estatísticas, nível de XP e conquistas desbloqueadas.">
+  
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/profile.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <main class="main-content profile-page">
+    <div class="container" id="profile-container">
+      <!-- Injetado dinamicamente via js/progress.js -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
+  <script type="module">
+    import { renderProfilePage } from '/js/progress.js';
+    renderProfilePage();
+  </script>
+</body>
+</html>

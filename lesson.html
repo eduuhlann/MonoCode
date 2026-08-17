@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula — MonoCode</title>
+  <meta name="description" content="Ambiente de aprendizado interativo com lição teórica e sandbox de código no MonoCode.">
+  
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/lesson.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <main class="main-content">
+    <div class="lesson-layout">
+      <!-- Sidebar do Curso -->
+      <aside class="lesson-sidebar" id="lesson-sidebar-container">
+        <!-- Injetado dinamicamente via js/lessons.js -->
+      </aside>
+
+      <!-- Conteúdo Principal da Aula -->
+      <section class="lesson-main-area" id="lesson-main-container">
+        <!-- Injetado dinamicamente via js/lessons.js -->
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
+  <script type="module">
+    import { renderLessonPage } from '/js/lessons.js';
+    renderLessonPage();
+  </script>
+</body>
+</html>

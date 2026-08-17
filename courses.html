@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos e Trilhas de Programação — MonoCode</title>
+  <meta name="description" content="Explore todos os cursos de programação do MonoCode. Do básico ao avançado em HTML, CSS, JavaScript, TypeScript, React Native, Python, SQL, C, C++, C# e mais.">
+  
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/course.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <main class="main-content courses-page">
+    <div class="container">
+      <div class="courses-header">
+        <h1>Trilhas de Aprendizado</h1>
+        <p>Escolha uma linguagem e aprenda através de lições detalhadas, exemplos reais e desafios interativos.</p>
+      </div>
+
+      <div class="courses-filter-bar">
+        <div class="filter-pills">
+          <button type="button" class="filter-pill active" data-filter="all">Todos os Níveis</button>
+          <button type="button" class="filter-pill" data-filter="iniciante">Iniciante</button>
+          <button type="button" class="filter-pill" data-filter="intermediario">Intermediário</button>
+          <button type="button" class="filter-pill" data-filter="avancado">Avançado</button>
+        </div>
+
+        <div class="courses-search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="courses-search-input" placeholder="Buscar por linguagem, tecnologia ou palavra-chave..." />
+        </div>
+      </div>
+
+      <div class="courses-catalog-grid" id="courses-catalog-container">
+        <!-- Injetado dinamicamente via js/courses.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
+  <script type="module">
+    import { renderCoursesCatalog } from '/js/courses.js';
+    renderCoursesCatalog();
+  </script>
+</body>
+</html>

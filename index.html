@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MonoCode — Aprenda a Programar do Básico ao Avançado</title>
+  <meta name="description" content="Plataforma moderna, minimalista e 100% dark mode para aprender linguagens de programação na prática com lições teóricas e desafios interativos.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/landing.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar injetada via JS -->
+  <div id="navbar-container"></div>
+
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="landing-hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            <span>Plataforma 100% Monocromática</span>
+          </div>
+
+          <h1 class="hero-title">Aprenda a programar. Do básico ao avançado.</h1>
+          
+          <p class="hero-desc">
+            O MonoCode é uma plataforma completa e focada para dominar linguagens de programação através de aulas aprofundadas, exemplos reais, execução de código no navegador e dezenas de exercícios práticos.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="courses.html" class="btn btn-primary btn-lg">Começar a aprender</a>
+            <a href="exercises.html" class="btn btn-secondary btn-lg">Explorar exercícios</a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <span class="hero-stat-value">14+</span>
+              <span class="hero-stat-label">Linguagens</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-value">100+</span>
+              <span class="hero-stat-label">Aulas e Módulos</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-value">6 Tipos</span>
+              <span class="hero-stat-label">De Exercícios</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editor de Código Visual / Interativo ao Lado do Hero -->
+        <div class="hero-code-visual">
+          <div class="hero-code-header">
+            <div class="hero-code-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="hero-code-tab">main.js</span>
+            <span class="badge" style="font-size: 0.65rem;">JavaScript ES6+</span>
+          </div>
+          <div class="hero-code-body">
+            <p><span class="code-comment">// Bem-vindo ao MonoCode</span></p>
+            <p><span class="code-kw">const</span> <span class="code-fn">plataforma</span> = <span class="code-str">"MonoCode"</span>;</p>
+            <p><span class="code-kw">const</span> <span class="code-fn">linguagens</span> = [<span class="code-str">"JavaScript"</span>, <span class="code-str">"Python"</span>, <span class="code-str">"C"</span>, <span class="code-str">"Rust"</span>];</p>
+            <br>
+            <p><span class="code-kw">function</span> <span class="code-fn">iniciarJornada</span>(aluno) {</p>
+            <p>&nbsp;&nbsp;<span class="code-kw">return</span> <span class="code-str">\`\${aluno} está dominando \${linguagens.length} tecnologias no \${plataforma}!\`</span>;</p>
+            <p>}</p>
+            <br>
+            <p>console.<span class="code-fn">log</span>(iniciarJornada(<span class="code-str">"Eduardo"</span>));</p>
+          </div>
+          <div class="hero-code-output-bar">
+            <span>&gt; Eduardo está dominando 4 tecnologias no MonoCode!</span>
+            <a href="courses.html" class="btn btn-secondary btn-sm">Testar Código</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Linguagens Disponíveis -->
+    <section class="section-wrapper" id="linguagens">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">CATÁLOGO COMPLETO</span>
+          <h2 class="section-title">Linguagens de Programação</h2>
+          <p class="section-desc">
+            Trilhas completas desenvolvidas para capacitar desde quem nunca escreveu uma linha de código até engenheiros sêniores.
+          </p>
+        </div>
+
+        <div class="languages-grid" id="landing-languages-grid">
+          <!-- Cards de linguagens injetados dinamicamente ou estáticos -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Aprenda na Prática -->
+    <section class="section-wrapper" id="pratica" style="background-color: #070707;">
+      <div class="container practice-showcase">
+        <div class="practice-info">
+          <span class="section-tag">METODOLOGIA ATIVA</span>
+          <h2 class="section-title">Aprenda na prática, não apenas lendo.</h2>
+          <p class="section-desc">
+            No MonoCode, você não apenas consome documentação estática. Cada conceito vem acompanhado de editores em tempo real, desafios algorítmicos e validação instantânea.
+          </p>
+
+          <div class="practice-points">
+            <div class="practice-point-item">
+              <div class="practice-point-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <div class="practice-point-content">
+                <h4>Editor com Execução Real</h4>
+                <p>Escreva código diretamente na página e veja os resultados no console integrado de baixa latência.</p>
+              </div>
+            </div>
+
+            <div class="practice-point-item">
+              <div class="practice-point-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <div class="practice-point-content">
+                <h4>Correção Instantânea de Bugs</h4>
+                <p>Exercícios para identificar e corrigir bugs sutis de sintaxe, tipos e assincronismo.</p>
+              </div>
+            </div>
+
+            <div class="practice-point-item">
+              <div class="practice-point-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <div class="practice-point-content">
+                <h4>Gamificação Sóbria e Conquistas</h4>
+                <p>Acumule pontos de experiência (XP), mantenha sua sequência de estudos e desbloqueie insígnias monocromáticas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demonstração Rápida de Editor no Landing -->
+        <div class="practice-interactive-demo">
+          <div class="demo-box-header">
+            <div>
+              <span class="badge">SANDBOX AO VIVO</span>
+              <h4 style="margin-top: 6px;">Experimente um Teste Rápido</h4>
+            </div>
+          </div>
+          <div id="landing-editor-mount" class="code-editor-component"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Níveis -->
+    <section class="section-wrapper" id="niveis">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">PROGRESSÃO ESTRUTURADA</span>
+          <h2 class="section-title">Para Todos os Níveis de Conhecimento</h2>
+          <p class="section-desc">Uma jornada curricular pensada para respeitar o seu ritmo e construir bases sólidas.</p>
+        </div>
+
+        <div class="levels-grid">
+          <div class="level-card">
+            <div class="level-step-indicator">NÍVEL 01</div>
+            <h3 class="level-card-title">Iniciante</h3>
+            <p class="level-card-desc">
+              Conceitos fundamentais da computação, lógica de programação, sintaxe básica, tipos primitivos, condicionais e loops.
+            </p>
+            <div class="level-topics-list">
+              <div class="level-topic-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Variáveis, Constantes e Tipos</span>
+              </div>
+              <div class="level-topic-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Estruturas de Controle e Funções</span>
+              </div>
+              <div class="level-topic-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Listas, Arrays e Operações Básicas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="level-card">
+            <div class="level-step-indicator">NÍVEL 02</div>
+            <h3 class="level-card-title">Intermediário</h3>
+            <p class="level-card-desc">
+              Projetos práticos, manipulação do DOM, APIs REST, programação assíncrona com Promises e Programação Orientada a Objetos.
+            </p>
+            <div class="level-topics-list">
+              <div class="level-topic-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Programação Orientada a Objetos (POO)</span>
+              </div>
+              <div class="level-topic-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Manipulação de Eventos e Requisições Assíncronas</span>
+              </div>
+              <div class="level-topic-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Estruturação Modular e Pacotes</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="level-card">
+            <div class="level-step-indicator">NÍVEL 03</div>
+            <h3 class="level-card-title">Avançado</h3>
+            <p class="level-card-desc">
+              Arquitetura de software, otimização de performance, gerenciamento de memória, algoritmos complexos e concorrência.
+            </p>
+            <div class="level-topics-list">
+              <div class="level-topic-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Closures, Prototypes e Event Loop</span>
+              </div>
+              <div class="level-topic-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Memory Management, Ownership e Ponteiros</span>
+              </div>
+              <div class="level-topic-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Design Patterns e Algoritmos O(log n)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Voluntariado / Comunidade -->
+    <section class="section-wrapper" id="voluntariado" style="background-color: #070707;">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">COMUNIDADE OPEN SOURCE</span>
+          <h2 class="section-title">Feito por voluntários, para todos.</h2>
+          <p class="section-desc">
+            O MonoCode é um projeto sem fins lucrativos: programadores de todo o mundo doam tempo
+            para criar lições, revisar conteúdo, corrigir bugs e melhorar a plataforma gratuitamente.
+          </p>
+        </div>
+
+        <div class="languages-grid">
+          <div class="lang-card">
+            <div>
+              <div class="lang-card-top">
+                <span class="lang-badge">ESCREVA</span>
+                <span class="lang-level-badge">Conteúdo</span>
+              </div>
+              <h3 class="lang-name">Crie lições e cursos</h3>
+              <p class="lang-desc">Escreva aulas, exemplos reais e exercícios sobre a linguagem que você domina. Todo material passa por revisão da comunidade.</p>
+            </div>
+          </div>
+
+          <div class="lang-card">
+            <div>
+              <div class="lang-card-top">
+                <span class="lang-badge">REVISE</span>
+                <span class="lang-level-badge">Qualidade</span>
+              </div>
+              <h3 class="lang-name">Revise e corrija</h3>
+              <p class="lang-desc">Ajude a revisar lições, apontar erros, melhorar exemplos e manter o conteúdo técnico sempre preciso e atualizado.</p>
+            </div>
+          </div>
+
+          <div class="lang-card">
+            <div>
+              <div class="lang-card-top">
+                <span class="lang-badge">PROGRAME</span>
+                <span class="lang-level-badge">Plataforma</span>
+              </div>
+              <h3 class="lang-name">Melhore o código</h3>
+              <p class="lang-desc">Contribua com o desenvolvimento da plataforma: features, editor, exercícios interativos, acessibilidade e performance.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Quero contribuir como voluntário</a>
+          <p style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted);">
+            Zero custo. Zero fins lucrativos. 100% do conhecimento aberto para quem quer aprender.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner CTA Final -->
+    <section class="section-wrapper" style="text-align: center; padding: 80px 0;">
+      <div class="container" style="max-width: 640px;">
+        <h2 style="font-size: 2.2rem; margin-bottom: 16px;">Pronto para transformar sua carreira?</h2>
+        <p style="margin-bottom: 28px;">Acesse gratuitamente todas as trilhas, resolva exercícios práticos e acompanhe sua evolução diária.</p>
+        <a href="courses.html" class="btn btn-primary btn-lg">Criar Conta e Começar</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer injetado via JS -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
+  <script type="module">
+    import { COURSES_DATA } from '/js/data/coursesData.js';
+    import { MonoEditor } from '/js/editor.js';
+
+    // Renderizar grid de linguagens na landing
+    const gridEl = document.getElementById('landing-languages-grid');
+    if (gridEl) {
+      gridEl.innerHTML = COURSES_DATA.map(course => `
+        <div class="lang-card">
+          <div>
+            <div class="lang-card-top">
+              <span class="lang-badge">${course.language}</span>
+              <span class="lang-level-badge">${course.level}</span>
+            </div>
+            <h3 class="lang-name">${course.name}</h3>
+            <p class="lang-desc">${course.shortDesc}</p>
+          </div>
+          <div class="lang-card-footer">
+            <span>${course.modules.length} Módulos</span>
+            <a href="course.html?id=${course.id}" class="btn btn-ghost btn-sm">Ver Curso →</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Montar editor interativo de demonstração
+    const demoMount = document.getElementById('landing-editor-mount');
+    if (demoMount) {
+      new MonoEditor(demoMount, {
+        language: 'javascript',
+        initialValue: `// Desafio Rápido: Calcule a soma dos quadrados
+const numeros = [1, 2, 3, 4, 5];
+const somaQuadrados = numeros
+  .map(n => n ** 2)
+  .reduce((acc, curr) => acc + curr, 0);
+
+console.log("Resultado:", somaQuadrados);`
+      });
+    }
+  </script>
+</body>
+</html>

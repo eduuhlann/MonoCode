@@ -1,0 +1,244 @@
+/**
+ * MonoCode — Lesson Documentation & Workspace Stylesheet
+ * Tema: Geometric Balance (100% Dark Monochrome)
+ */
+
+.lesson-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: calc(100vh - 64px);
+}
+
+/* Sidebar do Curso (Geometric Structure) */
+.lesson-sidebar {
+  background-color: #000000;
+  border-right: 1px solid var(--border-subtle);
+  padding: 24px 16px;
+  overflow-y: auto;
+  height: calc(100vh - 64px);
+  position: sticky;
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar-course-meta {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sidebar-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.sidebar-back-link:hover {
+  color: var(--text-primary);
+}
+
+.sidebar-course-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-syllabus {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-module-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+  padding-left: 8px;
+}
+
+.sidebar-lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-lesson-item:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.sidebar-lesson-item.active {
+  background-color: var(--bg-elevated);
+  border-color: var(--border-subtle);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.sidebar-item-status {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  width: 14px;
+  text-align: center;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.sidebar-lesson-item.active .sidebar-item-status {
+  color: var(--text-primary);
+}
+
+/* Área Principal da Aula */
+.lesson-main-area {
+  padding: 48px 64px 96px;
+  max-width: 960px;
+}
+
+.lesson-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+
+.lesson-header {
+  margin-bottom: 36px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.lesson-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+
+.lesson-summary-lead {
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Conteúdo Formatado da Lição */
+.lesson-article {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #CCCCCC;
+}
+
+.lesson-article h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 36px 0 16px;
+  color: var(--text-primary);
+}
+
+.lesson-article h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 28px 0 12px;
+  color: var(--text-primary);
+}
+
+.lesson-article h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 20px 0 8px;
+  color: var(--text-primary);
+}
+
+.lesson-article p {
+  margin-bottom: 20px;
+  color: #B8B8B8;
+}
+
+.lesson-article ul, .lesson-article ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.lesson-article ul { list-style: disc; }
+.lesson-article ol { list-style: decimal; }
+
+.lesson-article li {
+  margin-bottom: 8px;
+  color: #B8B8B8;
+}
+
+.lesson-article code {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85em;
+  color: var(--text-primary);
+}
+
+.lesson-article pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin: 24px 0;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #E0E0E0;
+}
+
+.lesson-article pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Sandbox de Prática na Lição */
+.lesson-practice-block {
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.lesson-practice-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Rodapé de Navegação da Aula */
+.lesson-nav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+

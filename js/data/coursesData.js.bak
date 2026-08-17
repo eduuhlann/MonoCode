@@ -1,0 +1,138 @@
+// MonoCode — Base de Dados de Cursos e Lições
+// Plataforma completa para aprender programação.
+
+export const COURSES_DATA = [
+
+// --- JavaScript ---
+{
+  id: 'javascript',
+  name: 'JavaScript',
+  language: 'JavaScript',
+  level: 'Iniciante a Avançado',
+  levelTag: 'all',
+  shortDesc: 'Aprenda a linguagem mais popular da web, desde tipos primitivos e DOM até closures, promises e arquitetura moderna.',
+  description: 'Trilha completa cobrindo fundamentos da linguagem, manipulação do navegador, programação assíncrona moderna, orientação a objetos e tópicos avançados como Event Loop e Design Patterns.',
+  tags: ['Web', 'Frontend', 'Backend', 'Fullstack'],
+  modules: [
+    {
+      id: 'js-fundamentos',
+      title: 'Fundamentos',
+      description: 'Bases da linguagem, tipos, operadores, estruturas de controle e funções.',
+      lessons: [
+        { id: 'js-intro', title: '1. Introdução ao JavaScript', summary: 'O que é JavaScript e como funciona no navegador.', content: '<p>JavaScript é a linguagem da web.</p>' },
+        { id: 'js-variaveis', title: '2. Variáveis e Tipos', summary: 'Tipos de dados primitivos e estruturados.', content: '<p>Primitivos: string, number, boolean, null, undefined, symbol, bigint.</p>' },
+        { id: 'js-funcoes', title: '3. Funções', summary: 'Declaração, parâmetros e retorno.', content: '<p>function soma(a, b) { return a + b; }</p>' },
+        { id: 'js-objetos', title: '4. Objetos e Arrays', summary: 'Criando e manipulando objetos e arrays.', content: '<p>const obj = { nome: "João" };</p>' },
+        { id: 'this-palavra', title: '5. O This', summary: 'Contexto de execução e a palavra this.', content: '<p>this referencia o objeto que está executando o código.</p>' },
+      ]
+    },
+    {
+      id: 'js-dom',
+      title: 'DOM e Eventos',
+      description: 'Manipulação do HTML e CSS com JavaScript.',
+      lessons: [
+        { id: 'js-selecao', title: '1. Seleção de Elementos', summary: 'querySelector e getElementById.', content: '<p>document.querySelector(".btn")</p>' },
+        { id: 'js-eventos', title: '2. Manipuladores de Eventos', summary: 'addEventListener e eventos mouse/keyboard.', content: '<p>btn.addEventListener("click", fn)</p>' },
+        { id: 'js-eventos-teclado', title: '3. Eventos de Teclado', summary: 'keyup, keydown, keypress.', content: '<p>window.addEventListener("keyup", fn)</p>' },
+        { id: 'js-dom-atualizacao', title: '4. Atualizando o DOM', summary: 'innerHTML, textContent, createElement.', content: '<p>element.innerHTML = "<p>Novo</p>"</p>' },
+        { id: 'js-eventos-formularios', title: '5. Formulários', summary: 'Envio e validação de formulários.', content: '<p>form.addEventListener("submit", fn)</p>' },
+      ]
+    },
+    {
+      id: 'js-assincronismo',
+      title: 'Assíncronia e Promises',
+      description: 'Programação assíncrona, promises e async/await.',
+      lessons: [
+        { id: 'js-promesas', title: '1. O que são Promises', summary: 'Estado: pending, resolved, rejected.', content: '<p>Uma promise tem três estados.</p>' },
+        { id: 'js-resolved', title: '2. Consumindo Promises', summary: '.then() e .catch().', content: '<p>promise.then(fn)</p>' },
+        { id: 'js-all', title: '3. Promise.all', summary: 'Executar várias promises simultaneamente.', content: '<p>Promise.all([p1, p2])</p>' },
+        { id: 'js-async-await', title: '3. Async/Await', summary: 'Sintaxe assíncrona moderna.', content: '<p>async function rodar() { await fn() </p>' },
+        { id: 'js-erros', title: '4. Tratamento de Erros', summary: 'try/catch e promise rejection.', content: '<p>try { await fn() } catch(e) {}</p>' },
+      ]
+    },
+    {
+      id: 'js-arrays',
+      title: 'Array Methods Avançados',
+      description: 'Métodos úteis para manipulação de arrays.',
+      lessons: [
+        { id: 'js-for-each', title: '1. forEach', summary: 'Iteração sobre arrays.', content: '[1,2,3].forEach(fn)' },
+        { id: 'js-map', title: '2. map', summary: 'Criar novo array transformando cada elemento.', content: '[1,2,3].map(x => x * 2)' },
+        { id: 'js-filter', title: '3. filter', summary: 'Filtrar elementos baseado em condição.', content: '[1,2,3].filter(x => x > 1)' },
+        { id: 'js-reduce', title: '3. reduce', summary: 'Reduzir array a um único valor.', content: '[1,2,3].reduce((a,b) => a+b, 0)' },
+        { id: 'js-every-some', title: '4. every e some', summary: 'Verificação condicional em arrays.', content: '[1,2,3].every(x => x > 0)' },
+      ]
+    },
+    {
+      id: 'js-classe',
+      title: 'Programação Orientada a Objetos',
+      description: 'Classes, herança e polimorfismo em JavaScript.',
+      lessons: [
+        { id: 'js-class-syntax', title: '1. Sintaxe de Classe', summary: 'class e construtor.', content: '<p>class Pessoa { constructor(nome) { this.nome = nome; } </p>' },
+        { id: 'js-extends', title: '2. Herança (extends)', summary: 'Herança entre classes.', content: '<p>class Aluno extends Pessoa {}</p>' },
+        { id: 'js-super', title: '3. super()', summary: 'Chamar construtor da classe pai.', content: '<p>super.nome = nome</p>' },
+        { id: 'js-getters-setters', title: '4. Getters e Setters', summary: 'Acesso controlado a propriedades.', content: '<p>get nome() { return this._nome; }</p>' },
+        { id: 'js-static', title: '5. Métodos Estáticos', summary: 'Métodos que pertencem à classe, não instância.', content: '<p>Pessoa.ola() { return "Olá"; }</p>' },
+      ]
+    },
+  ]
+},
+// --- Python ---
+{
+  id: 'python',
+  name: 'Python',
+  language: 'Python',
+  level: 'Iniciante a Avançado',
+  levelTag: 'all',
+  shortDesc: 'Linguagem de alta nível, poderosa e fácil de aprender, usada em IA, automação e dados.',
+  description: 'Trilha completa cobrindo sintaxe básica, estruturas de dados, orientação a objetos, decoradores eprogramação científica com NumPy e Pandas.',
+  tags: ['Ciência de Dados', 'Automação', 'IA', 'Backend'],
+  modules: [
+    {
+      id: 'py-fundamentos',
+      title: 'Fundamentos',
+      description: 'Sintaxe básica, tipos de dados e operadores.',
+      lessons: [
+        { id: 'py-intro', title: '1. Introdução ao Python', summary: 'O que é Python e instalação.', content: '<p>Python é uma linguagem interpretada.</p>' },
+        { id: 'py-variaveis', title: '2. Variáveis e Tipos', summary: 'Inteiros, floats, strings, booleans.', content: '<p>x = 10</p>' },
+        { id: 'py-operadores', title: '3. Operadores Aritméticos', summary: 'Soma, subtração, multiplicação, divisão.', content: '<p>x = 5 + 3</p>' },
+        { id: 'py-if-else', title: '4. Estruturas Condicionais', summary: 'if, elif e else.', content: '<p>if x > 0: ...</p>' },
+        { id: 'py-laços', title: '5. Laços de Repetição', summary: 'for e while.', content: '<p>for i in range(5): ...</p>' },
+      ]
+    },
+    {
+      id: 'py-funcoes',
+      title: 'Funções',
+      description: 'Definição de funções, parâmetros, retornos e escopo.',
+      lessons: [
+        { id: 'py-def', title: '1. Funções Básicas', summary: 'def nome(parametros): return valor.', content: '<p>def soma(a, b): return a + b</p>' },
+        { id: 'py-parâmetros', title: '2. Parâmetros Opcionais', summary: 'Parametros com valor padrão.', content: '<p>def soma(a, b=0): return a + b</p>' },
+        { id: 'py-args-kwargs', title: '3. *args e **kwargs', summary: 'Número variável de argumentos.', content: '<p>def fn(*args, **kwargs): ...</p>' },
+        { id: 'py-lambda', title: '4. Funções Lambda', summary: 'Funções anônimas de uma linha.', content: '<p>fn = lambda x: x + 1</p>' },
+      ]
+    },
+    {
+      id: 'py-orientacao-objetos',
+      title: 'Orientação a Objetos',
+      description: 'Classes, herança, polimorfismo e encapsulamento.',
+      lessons: [
+        { id: 'py-classes', title: '1. Classes Python', summary: 'class Nome: ...', content: '<p>class Pessoa: ...</p>' },
+        { id: 'py-heranca', title: '2. Herança', summary: 'Herança de classes.', content: '<p>class Filha(Pai): ...</p>' },
+        { id: 'polimorfismo', title: '3. Polimorfismo', summary: 'Mesmo método, comportamentos diferentes.', content: '<p>...</p>' },
+        { id: 'encapsulamento', title: '4. Encapsulamento', summary: 'Privacidade com _ e propriedades.', content: '<p>@property</p>' },
+      ]
+    },
+    {
+      id: 'py-bibliotecas',
+      title: 'Bibliotecas Populares',
+      description: 'NumPy, Pandas, Matplotlib e Automação.',
+      lessons: [
+        { id: 'py-numpy', title: '1. NumPy Básico', summary: 'Vetores e matrizes.', content: '<p>import numpy as np</p>' },
+        { id: 'py-pandas', title: '2. Pandas DataFrame', summary: 'Tabelas e análise de dados.', content: '<p>df = pd.read_csv(...)</p>' },
+        { id: 'py-matplotlib', title: '3. Matplotlib Graficos', summary: 'Gráficos simples.', content: '<p>plt.plot([1,2,3])</p>' },
+        { id: 'py-automacao', title: '4. Automação de Tarefas', summary: 'Automatizar tarefas repetitivas.', content: '<p>pyautogui</p>' },
+      ]
+    },
+  ]
+},
+// ... (outros cursos seguem o mesmo padrão) ---
+];

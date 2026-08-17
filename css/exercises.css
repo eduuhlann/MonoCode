@@ -1,0 +1,276 @@
+/**
+ * MonoCode — Interactive Exercises Hub Stylesheet
+ * Tema: Geometric Balance (100% Dark Monochrome)
+ */
+
+.exercises-page {
+  padding: 36px 0 80px;
+}
+
+.exercises-header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.exercises-header-section h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.03em;
+}
+
+.exercises-filter-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.exercise-type-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.type-tab-btn {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.type-tab-btn:hover, .type-tab-btn.active {
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+  border-color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Layout do Exercício Ativo */
+.exercise-workspace-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  margin-top: 24px;
+  min-height: 600px;
+}
+
+/* Lista Lateral de Exercícios */
+.exercises-sidebar-list {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 780px;
+  overflow-y: auto;
+}
+
+.exercise-list-item {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.exercise-list-item:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-medium);
+}
+
+.exercise-list-item.active {
+  background-color: var(--bg-elevated);
+  border-color: var(--border-strong);
+}
+
+.exercise-item-tags {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exercise-item-title {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* Painel de Resolução */
+.exercise-solver-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exercise-prompt-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.prompt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.prompt-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.prompt-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #CCCCCC;
+}
+
+/* Múltipla Escolha e Previsão de Saída */
+.mc-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.mc-option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mc-option-card:hover {
+  border-color: var(--border-strong);
+  background-color: var(--bg-tertiary);
+}
+
+.mc-option-card.selected {
+  border-color: var(--border-strong);
+  background-color: var(--bg-elevated);
+}
+
+.mc-option-card.correct {
+  border-color: #FFFFFF;
+  background-color: #1A1A1A;
+}
+
+.mc-option-card.incorrect {
+  border-color: #555555;
+  background-color: #121212;
+}
+
+.mc-option-badge {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mc-option-text {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* Preenchimento de Lacunas (Complete o código) */
+.fill-blank-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fill-blank-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fill-blank-input {
+  max-width: 320px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  border-radius: var(--radius-sm);
+  outline: none;
+  font-size: 0.88rem;
+}
+
+.fill-blank-input:focus {
+  border-color: var(--border-strong);
+}
+
+/* Feedback e Explicação */
+.exercise-feedback-card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  margin-top: 20px;
+  display: none;
+}
+
+.exercise-feedback-card.active {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feedback-status-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.feedback-explanation {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.exercise-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios & Desafios de Programação — MonoCode</title>
+  <meta name="description" content="Pratique programação com exercícios interativos: múltipla escolha, complete o código, corrija bugs, descubra a saída e desafios algorítmicos.">
+  
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/exercises.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <main class="main-content exercises-page">
+    <div class="container" id="exercises-page-container">
+      <!-- Injetado dinamicamente via js/exercises.js -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
+  <script type="module">
+    import { renderExercisesPage } from '/js/exercises.js';
+    renderExercisesPage();
+  </script>
+</body>
+</html>

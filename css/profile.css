@@ -1,0 +1,229 @@
+/**
+ * MonoCode — User Profile & Achievements Stylesheet
+ * Tema: Geometric Balance (100% Dark Monochrome)
+ */
+
+.profile-page {
+  padding: 40px 0 80px;
+}
+
+.profile-header-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 36px;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.profile-user-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.profile-avatar-large {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.profile-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profile-avatar-img {
+  object-fit: cover;
+}
+
+.profile-avatar-edit {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+  border: 1px solid var(--bg-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.profile-avatar-edit:hover {
+  opacity: 0.85;
+}
+
+.profile-avatar-edit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Editor inline de @usuário */
+.username-editor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin: -20px 0 36px;
+}
+
+.username-editor[hidden] {
+  display: none;
+}
+
+.username-editor-field {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+}
+
+.username-at {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.username-editor-field .input-field {
+  padding-left: 32px;
+  font-family: var(--font-mono);
+}
+
+.username-editor-error {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.profile-user-info h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.03em;
+}
+
+.profile-user-email {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+}
+
+.profile-meta-tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =========================================================================
+   GRID DE CONQUISTAS (ACHIEVEMENTS)
+   ========================================================================= */
+.achievements-section {
+  margin-top: 48px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.achievement-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.achievement-card.unlocked {
+  border-color: var(--border-strong);
+  background-color: var(--bg-card-hover);
+}
+
+.achievement-card.locked {
+  opacity: 0.5;
+}
+
+.achievement-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-primary);
+}
+
+.achievement-card.locked .achievement-icon-box {
+  color: var(--text-muted);
+  border-color: var(--border-subtle);
+}
+
+.achievement-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.achievement-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.achievement-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.achievement-status-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
