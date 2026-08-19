@@ -340,7 +340,7 @@ code, kbd, pre {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 72px;
 }
 
 .navbar-left {
@@ -442,19 +442,21 @@ code, kbd, pre {
 }
 
 .nav-user-avatar-btn {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-medium);
   color: var(--text-primary);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: border-color var(--transition-fast);
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .nav-user-avatar-btn:hover {

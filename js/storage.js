@@ -4,7 +4,6 @@
  * para substituição direta por Firestore ou API RESTful.
  */
 
-import { ACHIEVEMENTS_DATA } from './data/achievementsData.js';
 import { COURSES_DATA } from './data/coursesData.js';
 
 const STORAGE_KEY = 'monocode_storage_v1';
@@ -22,7 +21,6 @@ function _blankState() {
       currentLessonId: null
     },
     activityLog: [],
-    unlockedAchievements: [],
     codeDrafts: {},
     settings: {
       editorFontSize: 14,
@@ -109,7 +107,6 @@ class StorageManager {
 
       this.logActivity('lesson', lessonTitle || lessonId, courseId);
       this._save();
-      this.checkAchievements();
       return true;
     }
     return false;
@@ -124,7 +121,6 @@ class StorageManager {
       this.state.progress.completedExercises.push(exerciseId);
       this.logActivity('exercise', exerciseTitle || exerciseId, courseName);
       this._save();
-      this.checkAchievements();
       return true;
     }
     return false;
@@ -156,47 +152,6 @@ class StorageManager {
     };
     this.state.activityLog = [newEntry, ...(this.state.activityLog || [])].slice(0, 15);
     this._save();
-  }
-
-  // --- Conquistas ---
-  getUnlockedAchievements() {
-    return this.state.unlockedAchievements || [];
-  }
-
-  checkAchievements() {
-    const unlocked = new Set(this.state.unlockedAchievements || []);
-    const newlyUnlocked = [];
-
-    const stats = {
-      lessonsCount: this.state.progress.completedLessons.length,
-      exercisesCount: this.state.progress.completedExercises.length,
-      coursesCompleted: this.state.progress.completedCourses.length,
-      startedLanguages: this.state.progress.startedCourses.length
-    };
-
-    ACHIEVEMENTS_DATA.forEach(ach => {
-      if (!unlocked.has(ach.id)) {
-        let earned = false;
-        const req = ach.requirement;
-
-        if (req.type === 'lessons_count' && stats.lessonsCount >= req.threshold) earned = true;
-        if (req.type === 'exercises_count' && stats.exercisesCount >= req.threshold) earned = true;
-        if (req.type === 'courses_completed' && stats.coursesCompleted >= req.threshold) earned = true;
-        if (req.type === 'languages_started' && stats.startedLanguages >= req.threshold) earned = true;
-
-        if (earned) {
-          unlocked.add(ach.id);
-          newlyUnlocked.push(ach);
-        }
-      }
-    });
-
-    if (newlyUnlocked.length > 0) {
-      this.state.unlockedAchievements = Array.from(unlocked);
-      this._save();
-    }
-
-    return newlyUnlocked;
   }
 
   // --- Rascunhos de Código do Editor ---

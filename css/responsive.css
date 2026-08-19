@@ -112,6 +112,19 @@
     grid-template-columns: 1fr;
   }
 
+  .profile-avatar-large {
+    width: 118px;
+    height: 118px;
+    font-size: 2.5rem;
+  }
+
+  .profile-avatar-edit {
+    width: 32px;
+    height: 32px;
+    right: -6px;
+    bottom: -6px;
+  }
+
   .hero-stats-row {
     flex-direction: column;
     align-items: flex-start;

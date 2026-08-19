@@ -115,7 +115,7 @@ class UIManager {
                     ${ICONS.book} <span>Dashboard</span>
                   </a>
                   <a href="profile.html" class="dropdown-item">
-                    ${ICONS.user} <span>Perfil & Conquistas</span>
+                    ${ICONS.user} <span>Perfil</span>
                   </a>
                   <a href="settings.html" class="dropdown-item">
                     ${ICONS.settings} <span>Configurações</span>

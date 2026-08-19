@@ -4,7 +4,6 @@
 
 import { Storage } from './storage.js';
 import { COURSES_DATA } from './data/coursesData.js';
-import { ACHIEVEMENTS_DATA } from './data/achievementsData.js';
 import { UI, ICONS } from './ui.js';
 import { Auth } from './auth.js';
 
@@ -181,15 +180,13 @@ export function renderDashboard() {
 }
 
 /**
- * Renderiza a Página de Perfil e Conquistas
+ * Renderiza a Página de Perfil
  */
 export function renderProfilePage() {
   const container = document.getElementById('profile-container');
   if (!container) return;
 
   const user = Storage.getUser();
-  const stats = Storage.getStats();
-  const unlocked = new Set(Storage.getUnlockedAchievements());
 
   container.innerHTML = `
     <div class="profile-header-card">
@@ -236,34 +233,6 @@ export function renderProfilePage() {
       <button type="button" class="btn btn-primary btn-sm" id="username-save">Salvar</button>
       <button type="button" class="btn btn-ghost btn-sm" id="username-cancel">Cancelar</button>
       <span class="username-editor-error" id="username-editor-error"></span>
-    </div>
-
-    <!-- Grid de Conquistas -->
-    <div class="achievements-section">
-      <div class="section-label-header">
-        <h2>Conquistas & Badges Monocromáticos</h2>
-        <span class="badge">${unlocked.size} de ${ACHIEVEMENTS_DATA.length} Desbloqueadas</span>
-      </div>
-
-      <div class="achievements-grid">
-        ${ACHIEVEMENTS_DATA.map(ach => {
-          const isUnlocked = unlocked.has(ach.id);
-          return `
-            <div class="achievement-card ${isUnlocked ? 'unlocked' : 'locked'}">
-              <div class="achievement-icon-box">
-                ${ICONS[ach.icon] || ICONS.award}
-              </div>
-              <div class="achievement-details">
-                <div class="achievement-title">${ach.title}</div>
-                <div class="achievement-desc">${ach.description}</div>
-                <div class="achievement-status-tag">
-                  ${isUnlocked ? '✓ Desbloqueada' : 'Bloqueada'}
-                </div>
-              </div>
-            </div>
-          `;
-        }).join('')}
-      </div>
     </div>
   `;
 

@@ -4,7 +4,6 @@
  */
 
 import { UI } from './ui.js';
-import { Storage } from './storage.js';
 import { Auth } from './auth.js';
 
 const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -28,14 +27,6 @@ async function boot() {
 
   UI.renderNavbar(activeNav);
   UI.renderFooter();
-
-  // Verificação de novas conquistas após carregar
-  const newlyUnlocked = Storage.checkAchievements();
-  if (newlyUnlocked && newlyUnlocked.length > 0) {
-    newlyUnlocked.forEach(ach => {
-      UI.showToast(`Conquista Desbloqueada: ${ach.title}`, 'award', 5000);
-    });
-  }
 }
 
 boot();
