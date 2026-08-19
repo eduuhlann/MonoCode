@@ -147,8 +147,11 @@ class GlobalSearch {
       });
     });
 
-    // 3. Buscar em Exercícios
-    EXERCISES_DATA.forEach(ex => {
+    // 3. Buscar em Exercícios (cap early — com 120k+ itens, não vale a pena varrer tudo)
+    const MAX_EX_SEARCH = 60;
+    let exFound = 0;
+    for (let i = 0; i < EXERCISES_DATA.length && exFound < MAX_EX_SEARCH; i++) {
+      const ex = EXERCISES_DATA[i];
       if (ex.title.toLowerCase().includes(q) || ex.language.toLowerCase().includes(q) || ex.prompt.toLowerCase().includes(q)) {
         results.push({
           type: 'EXERCÍCIO',
@@ -156,8 +159,9 @@ class GlobalSearch {
           subtitle: `${ex.difficulty} • ${ex.language}`,
           url: `exercises.html?id=${ex.id}`
         });
+        exFound++;
       }
-    });
+    }
 
     if (results.length === 0) {
       this.resultsContainer.innerHTML = `
