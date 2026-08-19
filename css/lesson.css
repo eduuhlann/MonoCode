@@ -216,20 +216,6 @@
   padding: 0;
 }
 
-/* Sandbox de Prática na Lição */
-.lesson-practice-block {
-  margin-top: 56px;
-  padding-top: 36px;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.lesson-practice-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
 /* Rodapé de Navegação da Aula */
 .lesson-nav-footer {
   display: flex;
