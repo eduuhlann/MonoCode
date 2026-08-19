@@ -20,6 +20,7 @@ import { FIX_CODE } from './exercises/fixCode.js';
 import { WRITE_CODE } from './exercises/writeCode.js';
 import { CHALLENGES } from './exercises/challenges.js';
 import { GENERATED_EXERCISES } from './exercises/generator.js';
+import { GENERATED_WRITE_EXERCISES } from './exercises/writeCodeGenerator.js';
 
 // Exercícios autorados primeiro (qualidade curada), depois gerados (volume).
 export const EXERCISES_DATA = [
@@ -30,5 +31,6 @@ export const EXERCISES_DATA = [
   ...WRITE_CODE,
   ...CHALLENGES,
   ...GENERATED_EXERCISES,
+  ...GENERATED_WRITE_EXERCISES,
 ];
 

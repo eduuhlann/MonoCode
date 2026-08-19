@@ -342,7 +342,7 @@ export function renderExercisesPage() {
         } else if (currentEditor) {
           const result = await currentEditor.run();
           if (result.success && activeExercise.testValidation) {
-            isCorrect = activeExercise.testValidation(result.output || '');
+            isCorrect = activeExercise.testValidation(result.output || '', currentEditor.getValue());
             feedbackMsg = isCorrect
               ? 'Todos os casos de teste passaram com sucesso!'
               : 'O código executou, mas a saída não satisfez todas as asserções de teste.';
