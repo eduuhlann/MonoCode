@@ -5,7 +5,6 @@
 import { COURSES_DATA } from './data/coursesData.js';
 import { Storage } from './storage.js';
 import { UI, ICONS } from './ui.js';
-import { MonoEditor } from './editor.js';
 
 export function renderLessonPage() {
   const sidebarContainer = document.getElementById('lesson-sidebar-container');
@@ -100,19 +99,6 @@ export function renderLessonPage() {
       ${currentLesson.content}
     </article>
 
-    <!-- Prática Integrada / Editor -->
-    <div class="lesson-practice-block">
-      <div class="lesson-practice-header">
-        <div>
-          <h3>Prática em Código</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Experimente o código da aula no ambiente de execução abaixo:</p>
-        </div>
-        <span class="badge">${course.language}</span>
-      </div>
-
-      <div id="lesson-editor-mount" class="code-editor-component"></div>
-    </div>
-
     <!-- Navegação Inferior -->
     <div class="lesson-nav-footer">
       ${prevLesson ? `
@@ -136,15 +122,6 @@ export function renderLessonPage() {
       `}
     </div>
   `;
-
-  // Montar Editor de Código na Lição
-  const editorMount = document.getElementById('lesson-editor-mount');
-  if (editorMount) {
-    new MonoEditor(editorMount, {
-      language: course.language.toLowerCase(),
-      initialValue: currentLesson.initialCode || `// MonoCode Sandbox\nconsole.log("Executando aula de ${course.name}");`
-    });
-  }
 
   // Ação de Conclusão da Aula
   const completeBtn = document.getElementById('btn-complete-lesson');
